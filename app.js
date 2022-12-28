@@ -5,8 +5,7 @@ const loginRouter = require('./routers/login')
 const registerRouter = require('./routers/register')
 
 app.use(express.json());
-app.use("/register", registerRouter)
-app.use("/login", loginRouter)
+app.use("/api", [registerRouter, loginRouter])
 
 app.get("/", (req, res) => {
     res.send("Welcome to my page");
